@@ -1,0 +1,25 @@
+.scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: teal transparent; 
+    margin-right: 10px; 
+ 
+    &::-webkit-scrollbar {
+      width: 6px;
+     
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: teal; 
+      border-radius: 10px; 
+     
+    }
+  
+   
+}
+
+  

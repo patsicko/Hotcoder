@@ -1,0 +1,41 @@
+<div class=" m-3 xs:p-1 bg-white font-poppins flex justify-between sm:px-5 lg:ml-96 p-2 shadow rounded-sm w-1/2  " > 
+    
+        <div class="w-1/3 lg:w-3/5">
+            <app-text class="text-grayd font-poppins text-sm" text="Course name"></app-text>
+            <h3 class="mt-2 font-poppins font-semibold text-sm md:text-xl lg:text-2xl">{{course.courseName}}</h3>
+            <p class="text-teal text-xs font-poppins mt-2 w-2/3">{{course.author}}</p>
+            <div class="flex flex-cols">
+                <app-button class="font-poppins justify items-center text-xs text-teal p-1 rounded-sm  border border-teal hover:bg-teal hover:text-white mt-3 " type="button" text="Edit" (click)="onEdit(course)" ></app-button>
+                <app-button class=" justify items-center text-xs p-1 mx-2 rounded-sm text-redButton border border-redButton hover:bg-red hover:text-white mt-3" type="button" text="Remove" (click)="onRemove(course)"></app-button>
+            </div>
+        </div>
+        <!-- <div class="flex flex-cols gap-3 items-center mr-6">
+         <circle-progress
+            [percent]="course.progress"
+            [radius]="30"
+            [outerStrokeWidth]="6"
+            [innerStrokeWidth]="6"
+            [outerStrokeColor]="'#508edc'"
+            [innerStrokeColor]="'#e8e8e8'"
+            [animation]="false"
+            [animationDuration]="300">
+         </circle-progress> 
+         <div >
+            <h1 class="text-2xl mb-3">{{course.progress}}%</h1>
+            <app-text class="text-grayd text-sm  " text="Completed"></app-text>
+         </div>
+            
+        </div> -->
+        <!-- <mat-divider [vertical]="true" class="h-16 pt-10"></mat-divider> -->
+        <div class=" xs:-pl-3 w-px bg-gray-200 mb-7 mt-4"></div>
+       
+        
+        <div class="">
+            <app-text class="text-grayd text-xs font-poppins" text="CURRENT COURSE"></app-text>
+        
+            <app-button class="text-xs font-poppins p-0 xs:px-5 sm:px-6 py-1 rounded text-white border border-teal bg-teal mt-4" type="submit" (click)="onUpdate(course)" text="UPDATE CONTENT"></app-button>
+        </div>
+    
+   
+  
+</div>

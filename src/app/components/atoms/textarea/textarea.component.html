@@ -1,0 +1,16 @@
+
+
+<div [formGroup]="formGroup">
+    <textarea
+  class="border rounded p-2  w-1/2 pl-4 mt-5 font-poppins py-2  text-xs outline-none" [ngClass]="{'border border-red rounded-sm': formGroup.get('contents')?.invalid && formGroup.get('contents')?.touched}" type="text"  formControlName="contents" [placeholder]="placeholder"
+  rows="4"
+  cols="50"
+
+></textarea>
+<div class=" text-red text-xs font-poppins " *ngIf="formGroup.get('contents')?.hasError('required') && formGroup.get('contents')?.touched" >
+    contents are required.
+   </div>
+  
+    
+  </div>
+  

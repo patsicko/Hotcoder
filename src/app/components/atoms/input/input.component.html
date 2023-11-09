@@ -1,0 +1,10 @@
+
+    <div [formGroup]="formGroup" >
+        <input class="w-1/2 pl-4 py-2  font-poppins text-xs outline-none" [ngClass]="{'border border-red rounded-sm': formGroup.get('courseName')?.invalid && formGroup.get('courseName')?.touched}" type="text"  formControlName="courseName" [placeholder]="placeholder" >
+        <div class=" text-red text-xs font-poppins " *ngIf="formGroup.get('courseName')?.hasError('required') && formGroup.get('courseName')?.touched" >
+         Course Name is required.
+        </div>
+        <div class=" text-red text-xs font-poppins" *ngIf="formGroup.get('courseName')?.hasError('alphabetical') && formGroup.get('courseName')?.touched" >
+            Course name should be a string
+        </div>
+    </div>

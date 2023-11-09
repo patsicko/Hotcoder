@@ -1,0 +1,10 @@
+<div [formGroup]="formGroup">
+    <input class="w-1/2 pl-4 mt-5 font-poppins py-2  text-xs outline-none" [ngClass]="{'border border-red rounded-sm': formGroup.get('author')?.invalid && formGroup.get('author')?.touched}" type="text"  formControlName="author" [placeholder]="placeholder">
+    <div class=" text-red font-poppins text-xs" *ngIf="formGroup.get('author')?.hasError('required') && formGroup.get('author')?.touched" >
+     Author is required.
+    </div>
+    <div class=" text-red font-poppins text-xs" *ngIf="formGroup.get('author')?.hasError('alphabetical') && formGroup.get('author')?.touched" >
+        Author should be a string without digit or special character
+    </div>
+  </div>
+  

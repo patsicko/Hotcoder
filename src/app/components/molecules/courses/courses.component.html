@@ -1,0 +1,34 @@
+<div class=" ml-96 bg-bgBody ">
+
+  
+
+
+
+  <h3 class="ml-4 font-poppins text-lg py-3 text-grayd"> <app-text text="{{editMode? 'EDIT COURSE': updateMode? 'UPDATE COURSE PROGRESS': 'ADD NEW COURSE'}}"></app-text> </h3>
+  <form   [formGroup]="form" (ngSubmit)=" onSubmitForm()">
+
+        <app-input  [formGroup]="form"  placeholder="Course Name*"></app-input>
+
+        <app-author-field  [formGroup]="form"  placeholder="Author*"></app-author-field>
+
+        <app-textarea  [formGroup]="form"  placeholder="contents" ></app-textarea>
+
+        <!-- <app-progress-field  [formGroup]="form"  placeholder="Progress [Number only]*"></app-progress-field>
+    
+        <app-course-number  [formGroup]="form" placeholder="Lesson Number [Number only]* "></app-course-number> -->
+        
+          <app-button class="px-6 mt-5 py-2 bg-teal text-white font-poppins text-xs rounded-sm  "
+          type="submit" text="{{editMode? 'UPDATE COURSE': updateMode? 'UPDATE CONTENT': 'SAVE COURSE'}}"></app-button>
+     
+        
+        
+  </form>
+
+
+
+
+</div>
+
+
+
+
