@@ -1,6 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/Course';
 import { CoursesService } from 'src/app/services/courses.service';
+import { catchError, of} from 'rxjs'
 
 @Component({
   selector: 'app-landing-page',
@@ -18,6 +20,12 @@ export class LandingPageComponent implements OnInit {
     
   }
 
-  onClickCourse(){}
+  onClickCourse(course: Course){
+    this.courseService.getCourseById(course).pipe(catchError((error)=>{
+    console.log(error);
+    return of(error)
+    })).subscribe()
+    console.log("clicked")
+  }
 
 }

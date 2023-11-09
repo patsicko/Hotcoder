@@ -2,7 +2,7 @@
     <div>
         <h3>Sidebar</h3>
         <div *ngFor="let course of courses" class=" m-5 ">
-            <button type="submit" class="text-xl" (click)="onClickCourse()">{{course.courseName}}</button>
+            <button type="submit" class="text-xl" (click)="onClickCourse(course)">{{course.courseName}}</button>
             <p class="text-sm ">By {{course.author}}</p>
         </div>
         
