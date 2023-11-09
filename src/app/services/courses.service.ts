@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class CoursesService {
-  private apiUrl = "http://localhost:8000/api/courses";
+  private apiUrl = "https://hotcoder-be.onrender.com/api/courses";
   private courses: Course[] = [];
 
   private courseSubject = new BehaviorSubject<Course[]>(this.courses);
