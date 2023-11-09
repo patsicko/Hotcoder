@@ -20,12 +20,12 @@ let userProfile={}
 })
 export class LoginService {
 
-  private url="https://hotcoder-be.onrender.com/api/user";
+  private url="http://localhost:8000/api/user";
 
   constructor(private http:HttpClient) { }
 
-  login(loginData: LoginData): Observable<LoginMessage> {
-    const loginResponse= this.http.post<LoginMessage>(`${this.url}/login`, loginData, httpOptions);
+  login(loginData: LoginData): Observable<Profile> {
+    const loginResponse= this.http.post<Profile>(`${this.url}/login`, loginData, httpOptions);
      
     return loginResponse
   }

@@ -14,7 +14,7 @@ let userProfile={};
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  loginMessage: string;
+  loginMessage: Profile;
   
 
   
@@ -32,26 +32,30 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       const loginValue = this.loginForm.value;
       this.loginService.login(loginValue).subscribe(
-        (response: LoginMessage) => {
-          this.loginMessage = response.message;
+        (response: Profile) => {
+          this.loginMessage = response;
 
-         if(this.loginMessage=='success'){
-          this.loginService.profile().subscribe(
-            (response: Profile) => {
-              userProfile = response;
-              console.log("userProfile",userProfile);
+         if(this.loginMessage){
 
-              if (response.role === 'admin') {
-                this.router.navigate(['/dashboard']); // Redirect to the admin dashboard
-              } else if (response.role === 'user') {
-                this.router.navigate(['/landingPage']); // Redirect to the landing page for regular users
-              }
+          if (response.user.role === 'admin') {
+            this.router.navigate(['/dashboard']); // Redirect to the admin dashboard
+          } else if (response.user.role === 'user') {
+            this.router.navigate(['/landingPage']); // Redirect to the landing page for regular users
+          }
+
+
+          // this.loginService.profile().subscribe(
+          //   (response: Profile) => {
+          //     userProfile = response;
+          //     console.log("userProfile",userProfile);
+
+            
               
-            },
-            (error) => {
-              console.error(' Profile failed:', error);
-            }
-          );
+          //   },
+          //   (error) => {
+          //     console.error(' Profile failed:', error);
+          //   }
+          // );
          }
           
        

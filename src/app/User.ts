@@ -17,12 +17,14 @@ export interface LoginMessage {
 }
 
 export interface Profile {
+user:{
     id:number,
     firstName: string,
     lastName: string,
     phone:string,
     email: string,
     role: string
+}
     
 }
 

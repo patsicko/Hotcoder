@@ -31,6 +31,7 @@ import { TextareaComponent } from './components/atoms/textarea/textarea.componen
 import { LoginComponent } from './components/molecules/login/login.component';
 import { SignupComponent } from './components/molecules/signup/signup.component';
 import { UserListComponent } from './components/molecules/user-list/user-list.component';
+import { LandingPageComponent } from './components/molecules/landing-page/landing-page.component';
 
 
 const appRoutes: Routes=[
@@ -39,7 +40,8 @@ const appRoutes: Routes=[
   {path:'', component: DashboardComponent},
   {path:'signup', component: SignupComponent},
   {path:'login', component: LoginComponent},
-  {path:'userList', component: UserListComponent}
+  {path:'userList', component: UserListComponent},
+  {path:'landingPage', component: LandingPageComponent}
   
  
   
@@ -69,7 +71,8 @@ const appRoutes: Routes=[
     TextareaComponent,
     LoginComponent,
     SignupComponent,
-    UserListComponent
+    UserListComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
