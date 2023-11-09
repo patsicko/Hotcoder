@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "https://hotcoder-be.onrender.com",
+      "secure": false
+    }
+  }
+  
